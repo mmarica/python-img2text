@@ -1,8 +1,20 @@
 # Image to Text
 
-Convert images into ascii art
+Convert images into ascii art. This script has been tested with Python 2.7.
 
-Running the script on the sample image results in this output:
+## Dependencies
+
+The Pillow library is required. Install it using pip:
+
+```
+$ pip install Pillow
+```
+
+## Example usage
+
+```
+$ python img2text.py sample/cat.jpg
+```
 
 ```
 .....................................................................................................................................................................................................
