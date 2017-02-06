@@ -15,7 +15,7 @@ max_width = 2000
 max_height = 2000
 
 # how many times the image should be scaled down before transforming each pixel into a text character
-downscale = 5
+downscale = 10
 
 # multiplier for height when resizing, to compensate for the console characters shape, which are taller than wider
 height_multiplier = 0.6
