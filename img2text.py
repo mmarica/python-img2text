@@ -1,9 +1,11 @@
+# -*- coding: utf8 -*-
+
 from PIL import Image
 import sys
 
 def pixel_to_char(rgb):
     # list of available characters, sorted by luminosity: darker to lighter
-    chars = ("#", "?", "%", "$", "Q", "+", ",", "j", "*", "~", "`", ".", " ")
+    chars = (" ", "░", "▒", "▓", "█")
 
     r, g, b = rgb
     luminance = int(0.2126 * r + 0.7152 * g + 0.0722 * b)
@@ -15,7 +17,7 @@ max_width = 2000
 max_height = 2000
 
 # how many times the image should be scaled down before transforming each pixel into a text character
-downscale = 10
+downscale = 5
 
 # multiplier for height when resizing, to compensate for the console characters shape, which are taller than wider
 height_multiplier = 0.6
