@@ -5,5 +5,6 @@ args = CmdArgs()
 filename, downscale, height_multiplier = args.getArgs()
 
 img = Img2Text(filename)
-print img.convert()
-
+print img.downscale(downscale)\
+    .height_multiplier(height_multiplier)\
+    .convert()

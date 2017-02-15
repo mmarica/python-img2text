@@ -24,6 +24,14 @@ class Img2Text(object):
     def __init__(self, filename):
         self.filename = filename
 
+    def downscale(self, downscale):
+        self.downscale = downscale
+        return self
+
+    def height_multiplier(self, height_multiplier):
+        self.height_multiplier = height_multiplier
+        return self
+
     def convert(self):
         self.load_image()
         width, height = self.image.size
