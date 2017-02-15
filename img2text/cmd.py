@@ -9,8 +9,9 @@ class CmdArgs(object):
                             help='downscale factor (how many times the image should be scaled down before transforming each pixel into a text character)')
         parser.add_argument('--height_multiplier', type=float, dest='height_multiplier', default=default_height_multiplier,
                             help='multiplier for height when resizing (can be used to compensate for the shape of the console characters, which are taller than wider)')
-        parser.add_argument('--inverted', type=bool, dest='inverted', default=default_inverted,
-                            help='use True for displaying the generated ASCII image with white characters black on background, or False otherwise')
+        parser.add_argument('--inverted', dest='inverted', default=default_inverted, action='store_true',
+                            help='use this parameter when displaying the generated ASCII image with white characters black on background')
+        parser.set_defaults(inverted=False)
         self.parser = parser
 
     def getArgs(self):
