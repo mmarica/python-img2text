@@ -1,7 +1,7 @@
 from img2text.cmd import *
 from img2text.img import *
 
-args = CmdArgs()
+args = CmdArgs(Img2Text.DEFAULT_DOWNSCALE, Img2Text.DEFAULT_HEIGHT_MULTIPLIER)
 filename, downscale, height_multiplier = args.getArgs()
 
 img = Img2Text(filename)
