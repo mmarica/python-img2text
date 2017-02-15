@@ -8,7 +8,7 @@ config = {
     'version': '0.1',
     'author': '"Mihai Marica',
     'author_email': 'mihai.marica82@yahoo.com',
-    'install_requires': ['Pillow'],
+    'install_requires': ['Pillow', 'ArgumentParser'],
     'license': 'MIT',
     'scripts': ['img2text.py'],
 }
