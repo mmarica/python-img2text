@@ -4,7 +4,7 @@ import sys
 from PIL import Image
 
 class Img2Text(object):
-    # list of available characters, sorted by luminosity: darker to lighter
+    # list of available characters, sorted by luminosity: darker to lighter (assuming light text on dark background)
     chars = (" ", "░", "▒", "▓", "█")
 
     # defaults
@@ -71,9 +71,9 @@ class Img2Text(object):
 
     def __pixel_to_char(self, rgb):
         r, g, b = rgb
-        luminance = int(0.2126 * r + 0.7152 * g + 0.0722 * b)
+        luminance = int((r + g + b) / 3)
 
         if self.inverted:
             luminance = 255 - luminance
 
-        return self.chars[int((len(self.chars)) * luminance / 255) - 1]
+        return self.chars[int((len(self.chars) - 1) * luminance / 255)]
