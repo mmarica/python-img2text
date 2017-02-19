@@ -45,7 +45,7 @@ class Img2Text(object):
         width, height = image.size
 
         size = (width / self.downscale, int(height * self.height_multiplier / self.downscale))
-        resized_img = image.resize(size, Image.ANTIALIAS).convert('RGB');
+        resized_img = image.resize(size, Image.BICUBIC).convert('RGB');
 
         output = ""
         for y in range(size[1]):
@@ -71,7 +71,7 @@ class Img2Text(object):
 
     def __pixel_to_char(self, rgb):
         r, g, b = rgb
-        luminance = int((r + g + b) / 3)
+        luminance = int(0.299*r + 0.587*g + 0.114*b)
 
         if self.inverted:
             luminance = 255 - luminance
